@@ -1,0 +1,38 @@
+﻿@using PersonalManagmentSystem.Models.Entity
+@model List<Tbl_Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Personel Id</th>
+        <th>Personel First Name</th>
+        <th>Personel Last Name</th>
+        <th>Personel Age</th>
+        <th>Personel Address</th>
+        <th>Personel Salary</th>
+        <th>Personel Role</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach(var personel in Model)
+    {
+        <tr>
+            <td>@personel.PersonelID</td>
+            <td>@personel.PersonelFirstName</td>
+            <td>@personel.PersonelLastName</td>
+            <td>@personel.PersonelAge</td>
+            <td>@personel.PersonelAddress</td>
+            <td>@personel.PersonelSalary</td>
+            <td>@personel.Tbl_Role.RoleName</td>
+            <td><a href="/Personel/GetPersonel/@personel.PersonelID" class="btn btn-warning">Edit</a></td>
+            <td><a href="/Personel/DeletePersonel/@personel.PersonelID" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personel/NewPersonel" class="btn btn-primary">New Personel</a>

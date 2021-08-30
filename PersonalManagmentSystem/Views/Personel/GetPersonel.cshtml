@@ -1,0 +1,49 @@
+﻿@model PersonalManagmentSystem.Models.Entity.Tbl_Personel
+@{
+    ViewBag.Title = "GetPersonel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Personel</h2>
+
+@using (Html.BeginForm("EditPersonel", "Personel", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.PersonelID)
+    @Html.TextBoxFor(m => m.PersonelID, new { @class = "form-control", @ReadOnly = "true" })
+
+    <br />
+
+    @Html.LabelFor(m => m.PersonelFirstName)
+    @Html.TextBoxFor(m => m.PersonelFirstName, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.PersonelLastName)
+    @Html.TextBoxFor(m => m.PersonelLastName, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.PersonelAge)
+    @Html.TextBoxFor(m => m.PersonelAge, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.PersonelAddress)
+    @Html.TextBoxFor(m => m.PersonelAddress, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.PersonelSalary)
+    @Html.TextBoxFor(m => m.PersonelSalary, new { @class = "form-control" })
+
+    <br />
+
+    @Html.LabelFor(m => m.PersonelRole)
+    @Html.DropDownListFor(m => m.Tbl_Role.RoleID, (List<SelectListItem>)ViewBag.personelRoleDropDown_ViewBag, new { @class = "form-control" })
+</div>
+
+<div>
+    <button class="btn btn-primary">Save</button>
+</div>
+}

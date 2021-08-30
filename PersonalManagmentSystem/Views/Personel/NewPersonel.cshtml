@@ -1,0 +1,55 @@
+﻿@model PersonalManagmentSystem.Models.Entity.Tbl_Personel
+@{
+    ViewBag.Title = "NewPersonel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Personel</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <label>Personel First Name</label>
+        @Html.TextBoxFor(m => m.PersonelFirstName, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <label>Personel Last Name</label>
+        @Html.TextBoxFor(m => m.PersonelLastName, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <label>Personel Age</label>
+        @Html.TextBoxFor(m => m.PersonelAge, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <label>Personel Address</label>
+        @Html.TextBoxFor(m => m.PersonelAddress, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <label>Personel Salary</label>
+        @Html.TextBoxFor(m => m.PersonelSalary, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <label>Personel Role</label>
+        @Html.DropDownListFor(m => m.Tbl_Role.RoleID, (List<SelectListItem>)ViewBag.personelRoleDropDown_ViewBag, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>

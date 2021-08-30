@@ -1,0 +1,20 @@
+﻿@model PersonalManagmentSystem.Models.Entity.Tbl_Role
+@{
+    ViewBag.Title = "NewRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Role</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <label>Role Name</label>
+        @Html.TextBoxFor(m => m.RoleName, new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <div>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>

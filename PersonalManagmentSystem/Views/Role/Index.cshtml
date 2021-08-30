@@ -1,0 +1,28 @@
+﻿@using PersonalManagmentSystem.Models.Entity
+@model List<Tbl_Role>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Role</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Role Id</th>
+        <th>Role Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var role in Model)
+    {
+        <tr>
+            <td>@role.RoleID</td>
+            <td>@role.RoleName</td>
+            <td><a href="/Role/GetRole/@role.RoleID" class="btn btn-warning">Edit</a></td>
+            <td><a href="/Role/DeleteRole/@role.RoleID" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/Role/NewRole" class="btn btn-primary">New Role</a>
